@@ -1,0 +1,38 @@
+<?php
+
+$nombre=$_POST['nombre'];
+$apellido1=$_POST['apellido1'];
+$apellido2=$_POST['apellido2'];
+$fechaNac=$_POST['fechaNac'];
+$localidad=$_POST['localidad'];
+
+
+
+$line=$nombre;
+
+$line=$line.str_repeat(' ', (40-strlen($line)));
+
+
+$line=$line.$apellido1;
+$line=$line.str_repeat(' ', (81-strlen($line)));
+
+$line=$line.$apellido2;
+$line=$line.str_repeat(' ', (123-strlen($line)));
+
+$line=$line.$fechaNac;
+$line=$line.str_repeat(' ', (133-strlen($line)));
+
+$line=$line.$localidad;
+$line=$line.str_repeat(' ', (160-strlen($line)));
+
+
+$file = fopen("alumnos1.txt","a");
+
+fwrite($file,$line.PHP_EOL);
+
+fclose($file);
+
+
+
+
+?>
